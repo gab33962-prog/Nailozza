@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>⚽ TikTok Football Live</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ── HEADER ─────────────────────────────── -->
+  <header id="header">
+    <div id="header-left">
+      <span class="logo-ball">⚽</span>
+      <div class="title-block">
+        <span class="title-main">FOOTBALL</span>
+        <span class="title-sub">LIVE TikTok</span>
+      </div>
+    </div>
+    <div id="header-right">
+      <div id="tiktok-badge">
+        <span class="live-dot"></span>
+        <span id="live-label">LIVE</span>
+      </div>
+      <div id="gift-counter">
+        <span class="gift-icon">🎁</span>
+        <span id="total-gifts-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── LEADERBOARD ────────────────────────── -->
+  <section id="leaderboard">
+    <div class="section-title">🏆 CLASSEMENT</div>
+    <div id="leaderboard-list">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <!-- ── FIELD LABELS ───────────────────────── -->
+  <div id="field-header">
+    <span class="field-label-start">🚀 DÉPART</span>
+    <span class="field-label-end">BUT 🥅</span>
+  </div>
+
+  <!-- ── GAME LANES ─────────────────────────── -->
+  <main id="game-field">
+    <!-- lanes injected by JS -->
+  </main>
+
+  <!-- ── DONATION FEED ──────────────────────── -->
+  <section id="feed-panel">
+    <div class="section-title">🎁 DONS EN DIRECT</div>
+    <div id="feed-list">
+      <!-- items injected by JS -->
+    </div>
+  </section>
+
+</div><!-- #app -->
+
+<!-- ── GOAL OVERLAY ──────────────────────────── -->
+<div id="goal-overlay" class="overlay hidden">
+  <div class="goal-flash"></div>
+  <div class="goal-content">
+    <div class="goal-emoji">⚽</div>
+    <div class="goal-text">GOAL!</div>
+    <div class="goal-flag" id="goal-flag"></div>
+    <div class="goal-country" id="goal-country"></div>
+    <div class="goal-score-wrap">
+      Score: <span id="goal-score">0</span>
+    </div>
+  </div>
+  <div id="confetti-container"></div>
+</div>
+
+<!-- ── NEW LEADER OVERLAY ────────────────────── -->
+<div id="leader-overlay" class="overlay hidden">
+  <div class="leader-content">
+    <div class="crown-anim">👑</div>
+    <div class="leader-title">NOUVEAU LEADER !</div>
+    <div class="leader-flag" id="leader-flag"></div>
+    <div class="leader-name" id="leader-name"></div>
+  </div>
+</div>
+
+<!-- ── STATUS TOAST ──────────────────────────── -->
+<div id="status-toast" class="hidden"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="client.js"></script>
+</body>
+</html>
